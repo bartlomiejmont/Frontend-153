@@ -1,0 +1,25 @@
+.mainContainer {
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  margin: 4px;
+  height: 250px;
+  width: 450px;
+}
+
+.bookImage {
+  width: 150px;
+  height: 200px;
+}
+
+.leftContainer {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.rightContainer {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}

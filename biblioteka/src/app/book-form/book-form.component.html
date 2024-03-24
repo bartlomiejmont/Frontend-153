@@ -1,0 +1,23 @@
+<form [formGroup]="bookForm" class="bookForm" (ngSubmit)="onSubmit()">
+  <div class="inputContainer">
+    <label>Title</label>
+    <input formControlName="title" id="title" type="text" />
+  </div>
+  <div class="inputContainer">
+    <label>ISBN</label>
+    <input formControlName="isbn" id="isbn" type="text" />
+  </div>
+  <div class="inputContainer">
+    <label>Author</label>
+    <input formControlName="author" title="author" type="text" />
+  </div>
+  <div class="inputContainer">
+    <label>Publisher</label>
+    <input formControlName="publisher" id="publisher" type="text" />
+  </div>
+  <div class="inputContainer">
+    <label>Image</label>
+    <input formControlName="image" id="image" type="text" />
+  </div>
+  <button type="submit">Add book</button>
+</form>

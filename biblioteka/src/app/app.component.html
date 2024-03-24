@@ -1,0 +1,10 @@
+<div class="searchBar">
+  <input (change)="handleSearch($event)" />
+</div>
+<app-book-form></app-book-form>
+<div class="cardList">
+  <app-book-card
+    *ngFor="let bookElement of booksList"
+    [bookInput]="bookElement"
+  ></app-book-card>
+</div>

@@ -1,0 +1,10 @@
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0px;
+}
+
+.bookForm {
+  width: 300px;
+  margin: 36px;
+}
