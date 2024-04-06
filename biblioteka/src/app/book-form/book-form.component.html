@@ -3,21 +3,78 @@
     <label>Title</label>
     <input formControlName="title" id="title" type="text" />
   </div>
+  <div *ngIf="bookForm.controls.title.touched">
+    <p class="errorLabel" *ngIf="bookForm.controls.title.errors?.['required']">
+      To pole jest wymagane
+    </p>
+    <p class="errorLabel" *ngIf="bookForm.controls.title.errors?.['minlength']">
+      Pole musi miec minimum
+      {{bookForm.controls.title.errors?.['minlength']?.['requiredLength']}}
+      znakow.
+    </p>
+  </div>
   <div class="inputContainer">
     <label>ISBN</label>
-    <input formControlName="isbn" id="isbn" type="text" />
+    <input formControlName="ISBN" id="isbn" type="text" />
+  </div>
+  <div *ngIf="bookForm.controls.ISBN.touched">
+    <p class="errorLabel" *ngIf="bookForm.controls.ISBN.errors?.['required']">
+      To pole jest wymagane
+    </p>
+    <p class="errorLabel" *ngIf="bookForm.controls.ISBN.errors?.['minlength']">
+      Pole musi miec minimum
+      {{bookForm.controls.ISBN.errors?.['minlength']?.['requiredLength']}}
+      znakow.
+    </p>
   </div>
   <div class="inputContainer">
     <label>Author</label>
     <input formControlName="author" title="author" type="text" />
   </div>
+  <div *ngIf="bookForm.controls.author.touched">
+    <p class="errorLabel" *ngIf="bookForm.controls.author.errors?.['required']">
+      To pole jest wymagane
+    </p>
+    <p
+      class="errorLabel"
+      *ngIf="bookForm.controls.author.errors?.['minlength']"
+    >
+      Pole musi miec minimum
+      {{bookForm.controls.author.errors?.['minlength']?.['requiredLength']}}
+      znakow.
+    </p>
+  </div>
   <div class="inputContainer">
     <label>Publisher</label>
     <input formControlName="publisher" id="publisher" type="text" />
+  </div>
+  <div *ngIf="bookForm.controls.publisher.touched">
+    <p
+      class="errorLabel"
+      *ngIf="bookForm.controls.publisher.errors?.['required']"
+    >
+      To pole jest wymagane
+    </p>
+    <p
+      class="errorLabel"
+      *ngIf="bookForm.controls.publisher.errors?.['minlength']"
+    >
+      Pole musi miec minimum
+      {{ bookForm.controls.publisher.errors?.['minlength']?.['requiredLength'] }}
+      znakow.
+    </p>
   </div>
   <div class="inputContainer">
     <label>Image</label>
     <input formControlName="image" id="image" type="text" />
   </div>
-  <button type="submit">Add book</button>
+  <div *ngIf="bookForm.controls.image.touched">
+    <p class="errorLabel" *ngIf="bookForm.controls.image.errors?.['required']">
+      To pole jest wymagane
+    </p>
+    <p class="errorLabel" *ngIf="bookForm.controls.image.errors?.['pattern']">
+      Wymagany adres URL do zdjecia
+    </p>
+  </div>
+  <button type="submit" [disabled]="!bookForm.valid">Add book</button>
 </form>

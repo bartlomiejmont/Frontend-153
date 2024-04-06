@@ -1,10 +1,4 @@
-<div class="searchBar">
-  <input (change)="handleSearch($event)" />
-</div>
+<app-search (search)="handleSearchEvent($event)"></app-search>
 <app-book-form></app-book-form>
-<div class="cardList">
-  <app-book-card
-    *ngFor="let bookElement of booksList"
-    [bookInput]="bookElement"
-  ></app-book-card>
-</div>
+<app-book-list [booksList]="booksList"></app-book-list>
+<!-- <router-outlet></router-outlet> -->
